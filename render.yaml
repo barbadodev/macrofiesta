@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: macrofiesta
-    runtime: php
-    buildCommand: composer install --no-dev && php artisan optimize
-    startCommand: vendor/bin/heroku-php-apache2 public/
-    envVars:
-      - key: APP_KEY
-        sync: false 
