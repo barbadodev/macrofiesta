@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-@section('title', 'EDITAR-ENTRADA' . $invitado->nombre_apellidos)
+@section('title', 'EDITAR-ENTRADA - ' . $invitado->nombre_apellidos)
 
 @section('content')
 <style>

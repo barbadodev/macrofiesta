@@ -30,7 +30,7 @@ class CumpleController extends Controller
 
         $cumple->save();
 
-        Mail::to($cumple->email)->send(new RegistroFiestaMail($cumple));
+       
 
         return redirect()->route('cumples.show', $cumple);
 
