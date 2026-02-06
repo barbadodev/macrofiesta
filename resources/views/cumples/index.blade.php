@@ -29,7 +29,7 @@
 <div class="min-h-screen bg-party py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-5xl mx-auto">
         
-        {{-- Header Brutalista --}}
+       
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
                 <span class="text-purple-500 font-black tracking-[0.3em] uppercase text-xs">Access Control</span>
@@ -45,15 +45,15 @@
             </a>
         </div>
 
-        {{-- Grid de Invitados (Tarjetas en vez de lista) --}}
+        
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @forelse ($invitados as $invitado)
                 <div class="glass-card rounded-[2rem] p-6 hover:border-purple-500/50 transition-all duration-500 group relative overflow-hidden">
-                    {{-- Decoración interna --}}
+                    
                     <div class="absolute -right-4 -top-4 w-24 h-24 bg-purple-600/10 rounded-full blur-2xl group-hover:bg-purple-600/30 transition-all"></div>
                     
                     <div class="relative flex flex-col items-center text-center">
-                        {{-- Avatar con Neón --}}
+                        
                         <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-gray-800 to-black flex items-center justify-center border border-white/10 mb-4 group-hover:scale-110 transition-transform shadow-2xl">
                             <span class="text-3xl font-black text-white group-hover:text-purple-400">
                                 {{ substr($invitado->nombre_apellidos, 0, 1) }}
@@ -78,19 +78,19 @@
             @endforelse
         </div>
 
-        {{-- Paginación --}}
+       
         <div class="mt-12 p-4 rounded-2xl bg-white/5 border border-white/5 backdrop-blur-sm">
             {{ $invitados->links() }}
 
             
         </div>
         <div class="mt-12 text-center space-y-4">
-    {{-- Tu firma --}}
+  
     <p class="text-[18px] font-mono text-gray-500">
         Hecho por <span class="text-white border-b border-purple-500">@antoniobarbado_ @barbadodev in GitHub</span>
     </p>
 
-    {{-- Botón de cerrar sesión que ya teníamos --}}
+    
     <a href="{{ route('cumples.admin.logout') }}" 
        class="inline-block text-[13px] font-black text-red-500/40 hover:text-red-500">
        🔒 Cerrar Sesión Admin

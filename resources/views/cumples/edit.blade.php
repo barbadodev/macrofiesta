@@ -24,7 +24,7 @@
 <div class="min-h-screen animate-gradient flex items-center justify-center p-6">
     <div class="relative w-full max-w-lg">
         
-        {{-- Luces de fondo en tonos ámbar/dorado para diferenciar que es EDICIÓN --}}
+        
         <div class="absolute -top-24 -left-24 w-80 h-80 bg-purple-600 rounded-full mix-blend-screen filter blur-[90px] opacity-20 animate-pulse"></div>
         <div class="absolute -bottom-24 -right-24 w-80 h-80 bg-blue-600 rounded-full mix-blend-screen filter blur-[90px] opacity-20 animate-pulse"></div>
 
@@ -44,14 +44,14 @@
                 @csrf
                 @method('put')
 
-                {{-- Campo: Nombre y Apellidos --}}
+                
                 <div class="group relative">
                     <label class="text-[10px] font-black text-blue-300 uppercase tracking-[0.2em] ml-1 opacity-70 group-focus-within:opacity-100 transition-all">Nombre y Apellidos</label>
                     <input type="text" name="nombre_apellidos" value="{{ $invitado->nombre_apellidos }}" required
                         class="w-full bg-transparent border-0 border-b border-white/30 px-0 py-3 text-lg text-white focus:ring-0 focus:border-blue-500 transition-all placeholder:text-white/20">
                 </div>
 
-                {{-- Campo: Email --}}
+              
                 <div class="group relative">
                     <label class="text-[10px] font-black text-blue-300 uppercase tracking-[0.2em] ml-1 opacity-70 group-focus-within:opacity-100 transition-all">Email de Invitación</label>
                     <input type="email" name="email" value="{{ $invitado->email }}" required
@@ -59,13 +59,13 @@
                 </div>
 
                 <div class="grid grid-cols-2 gap-8">
-                    {{-- Campo: Bebida --}}
+                    
                     <div class="group relative">
                         <label class="text-[10px] font-black text-blue-300 uppercase tracking-[0.2em] ml-1 opacity-70 group-focus-within:opacity-100 transition-all">Bebida</label>
                         <input type="text" name="bebida_alcoholica" value="{{ $invitado->bebida_alcoholica }}"
                             class="w-full bg-transparent border-0 border-b border-white/30 px-0 py-3 text-lg text-white focus:ring-0 focus:border-blue-500 transition-all placeholder:text-white/20">
                     </div>
-                    {{-- Campo: Mezcla --}}
+                    
                     <div class="group relative">
                         <label class="text-[10px] font-black text-blue-300 uppercase tracking-[0.2em] ml-1 opacity-70 group-focus-within:opacity-100 transition-all">Mezcla</label>
                         <input type="text" name="mezcla" value="{{ $invitado->mezcla }}"

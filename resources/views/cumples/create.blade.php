@@ -31,7 +31,7 @@
             
             <div class="pt-12 pb-8 px-10 text-center">
                 <span class="inline-block px-4 py-1 rounded-full bg-purple-500/20 text-purple-400 text-[10px] font-black uppercase tracking-[0.3em] mb-4 border border-purple-500/30">
-                    Sábado 13 de Abril
+                    Sábado 11 de Abril
                 </span>
                 <h1 class="text-5xl font-black text-white italic tracking-tighter uppercase leading-none">
                     MACRO<span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">FIESTA</span>
@@ -42,7 +42,7 @@
             <form action="{{ route('cumples.store') }}" method="POST" class="p-10 pt-0 space-y-8">
                 @csrf
 
-                {{-- Campo: Nombre y Apellidos --}}
+                
                 <div class="group relative">
                     <label class="text-[10px] font-black text-purple-300 uppercase tracking-[0.2em] ml-1 opacity-70 group-focus-within:opacity-100 transition-all">Nombre y Apellidos</label>
                     <input type="text" name="nombre_apellidos" required
@@ -50,7 +50,7 @@
                         placeholder="Nombre completo">
                 </div>
 
-                {{-- Campo: Email --}}
+                
                 <div class="group relative">
                     <label class="text-[10px] font-black text-purple-300 uppercase tracking-[0.2em] ml-1 opacity-70 group-focus-within:opacity-100 transition-all">Email</label>
                     <input type="email" name="email" required
@@ -59,14 +59,14 @@
                 </div>
 
                 <div class="grid grid-cols-2 gap-8">
-                    {{-- Campo: Bebida alcohólica --}}
+                   
                     <div class="group relative">
                         <label class="text-[10px] font-black text-purple-300 uppercase tracking-[0.2em] ml-1 opacity-70 group-focus-within:opacity-100 transition-all">Bebida</label>
                         <input type="text" name="bebida"
                             class="w-full bg-transparent border-0 border-b border-white/30 px-0 py-3 text-lg text-white focus:ring-0 focus:border-purple-500 transition-all placeholder:text-white/20"
                             placeholder="¿Qué tomas?">
                     </div>
-                    {{-- Campo: Mezcla --}}
+                    
                     <div class="group relative">
                         <label class="text-[10px] font-black text-purple-300 uppercase tracking-[0.2em] ml-1 opacity-70 group-focus-within:opacity-100 transition-all">Mezcla</label>
                         <input type="text" name="mezcla"

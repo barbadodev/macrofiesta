@@ -54,6 +54,17 @@ Route::get('/admin-logout', function () {
 })->name('cumples.admin.logout');
 
 
+use App\Mail\RegistroFiestaMail;
+
+Route::get('/preview-mail', function () {
+    // Buscamos el último invitado para usar sus datos en la prueba
+    $cumple = Cumple::latest()->first(); 
+    
+    // Esto muestra el diseño del correo directamente en la pantalla
+    return new RegistroFiestaMail($cumple);
+});
+
+
 
 
 

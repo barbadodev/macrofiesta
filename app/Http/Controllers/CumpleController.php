@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cumple;
+use App\Mail\RegistroFiestaMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Mail;
+
 
 class CumpleController extends Controller
 {
@@ -26,6 +29,8 @@ class CumpleController extends Controller
         $cumple->token = Str::random(10);
 
         $cumple->save();
+
+        Mail::to($cumple->email)->send(new RegistroFiestaMail($cumple));
 
         return redirect()->route('cumples.show', $cumple);
 
