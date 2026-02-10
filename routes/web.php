@@ -4,44 +4,30 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CumpleController;
 use App\Models\Cumple;
 use Illuminate\Support\Facades\Session;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+use App\Mail\RegistroFiestaMail;
+use Illuminate\Http\Request;
 
 Route::get('/', HomeController::class);
 
 Route::get('cumples',[CumpleController::class, 'index'])->name('cumples.index');
-
 Route::get('cumple/registrar',[CumpleController::class, 'create'])->name('cumples.create');
-
 Route::post('cumples', [CumpleController::class, 'store'])->name('cumples.store');
 
+// Rutas de información (IMPORTANTE: Antes del {cumple})
+Route::get('cumples/sitio', [CumpleController::class, 'sitio'])->name('cumples.sitio');
+Route::get('cumples/vestimenta', [CumpleController::class, 'vestimenta'])->name('cumples.vestimenta');
+
 Route::get('cumples/{cumple}',[CumpleController::class, 'show'])->name('cumples.show');
-
 Route::get('cumples/{cumple}/edit',[CumpleController::class, 'edit'])->name('cumples.edit');
-
 Route::put('cumples/{cumple}',[CumpleController::class, 'update'])->name('cumples.update');
 
-
-
-
-
-//login del admin
+// Login del admin
 Route::get('/admin-login', function () {
     return view('cumples.admin-login');
 })->name('cumples.admin.login');
 
-//Clave
-Route::post('/admin-auth', function (Illuminate\Http\Request $request) {
-    if ($request->password === 'adminabp') { //CONTRASEÑA
+Route::post('/admin-auth', function (Request $request) {
+    if ($request->password === 'adminabp') {
         Session::put('admin_access', true);
         return redirect()->route('cumples.index');
     }
@@ -49,29 +35,11 @@ Route::post('/admin-auth', function (Illuminate\Http\Request $request) {
 })->name('cumples.admin.auth');
 
 Route::get('/admin-logout', function () {
-    Session::forget('admin_access'); // Borra el permiso
+    Session::forget('admin_access'); 
     return redirect()->route('cumples.admin.login');
 })->name('cumples.admin.logout');
 
-
-use App\Mail\RegistroFiestaMail;
-
 Route::get('/preview-mail', function () {
-    // Buscamos el último invitado para usar sus datos en la prueba
     $cumple = Cumple::latest()->first(); 
-    
-    // Esto muestra el diseño del correo directamente en la pantalla
     return new RegistroFiestaMail($cumple);
 });
-
-
-
-
-
-
-
-
-
-
-
-
