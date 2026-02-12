@@ -16,6 +16,10 @@
                 Acceder a la Lista
             </button>
         </form>
+        <a href="{{route('cumples.create')}}" 
+                        class="text-[9px] font-black text-gray-400 hover:text-purple-500 text-center uppercase tracking-[0.4em] transition-all duration-300">
+                        ← Volver a el registro
+        </a>
     </div>
 </div>
 @endsection

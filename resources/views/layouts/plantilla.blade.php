@@ -6,12 +6,11 @@
     <title>@yield('title')</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
-    {{-- ICONO PESTAÑA --}}
     <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
 
-    {{-- APP MOVILES --}}
+
     <link rel="apple-touch-icon" href="{{ asset('favicon.png') }}">
-    
+
 
     
 

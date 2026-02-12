@@ -74,7 +74,7 @@
 
         <div class="mt-8 text-center">
             <p class="text-[11px] font-mono text-gray-400">
-                Developed by <span class="text-indigo-400">@antoniobarbado_</span>
+                Developed by <span class="text-indigo-400">@antoniobarbado_, @barbadodev on GitHub</span>
             </p>
         </div>
     </div>

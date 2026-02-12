@@ -10,16 +10,22 @@ class Cumple extends Model
     use HasFactory;
 
     protected $table = 'tabla_cumpleanos';
+
     protected $fillable = [
         'nombre_apellidos',
-        'email',
-        'bebida_alcoholica',
-        'mezcla'
+        'tinto',
+        'cerveza',
+        'refrescos',
+        'mezcla',
+        'copas',
+        'observaciones',
+        'token',
+        'email'
     ];
 
     
-public function getRouteKeyName()
-{
-    return 'token';
-}
+    public function getRouteKeyName()
+    {
+        return 'token';
+    }
 }
