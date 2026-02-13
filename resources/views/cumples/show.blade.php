@@ -4,30 +4,30 @@
 
 @section('content')
 <style>
-    body {
-        margin: 0;
-        background-color: #f0f4f8;
-        min-height: 100vh;
-    }
-
     @keyframes gradient {
         0% { background-position: 0% 50%; }
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
     }
+    body {
+        margin: 0;
+        background-color: #ec4899; 
+        min-height: 100vh;
+    }
 
     .animate-gradient {
-        background: linear-gradient(-45deg, #eef2ff, #f5f3ff, #ecfdf5, #fff1f2);
+        background: linear-gradient(-100deg, #f584bc, #f29fff, #f892a3);
         background-size: 400% 400%;
-        animation: gradient 15s ease infinite;
+        animation: gradient 10s ease infinite;
         min-height: 100vh; 
         width: 100%;
     }
 
     .glass-light {
-        background: rgba(255, 255, 255, 0.7);
+        background: rgba(255, 255, 255, 0.9);
         backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     }
 
     .ticket-cut {
@@ -59,7 +59,7 @@
             <div class="pt-12 pb-8 px-10 text-center border-b border-dashed border-slate-200/80">
                 <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-tr from-purple-400 to-pink-400 rounded-[2rem] flex items-center justify-center shadow-lg shadow-purple-500/20 transform rotate-3">
                     <span class="text-4xl font-black text-white italic">
-                        {{ substr($invitado->nombre_apellidos, 0, 1) }}
+                        #{{ $invitado->id }}
                     </span>
                 </div>
                 
@@ -147,33 +147,38 @@
                     </div>
                 </div>
             </div>
-
-            <div class="bg-white/40 py-6 text-center border-t border-slate-100">
-                <p class="text-[10px] font-mono text-gray-400 uppercase tracking-tighter">
-                    ID: #00{{ $invitado->id }} | MACROFIESTA TRANCHETE 2026
-                </p>
-                <p class="text-[9px] font-mono text-gray-400 mt-1 opacity-50">
-                    Developed by @antoniobarbado_
-                </p>
-            </div>
         </div>
     </div>
 
-    <div class="w-full max-w-4xl mt-12 mb-16 px-4">
+    <div class="w-full max-w-4xl mt-12 mb-16">
         <div class="flex flex-col md:flex-row items-center justify-center gap-10">
             <div class="flex flex-col items-center gap-4">
-                <a href="{{ route('cumples.vestimenta') }}" class="group relative h-48 w-full max-w-[280px] md:w-64 rounded-[2rem] bg-white/40 border border-white shadow-sm overflow-hidden transform hover:scale-[1.05] transition-all">
-                    <img src="{{ asset('img/vestimenta.jpg')}}" class="w-full h-full object-cover">
+                <a href="{{ route('cumples.vestimenta') }}" class="group relative h-72 w-full max-w-[320px] md:w-80 rounded-[2.5rem] bg-white/40 border border-white shadow-sm overflow-hidden transform hover:scale-[1.05] transition-all duration-500">
+                    <img src="{{ asset('img/vestimenta.jpg')}}" class="w-full h-full object-cover" alt="VESTIMENTA">
+                    <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
                 </a>
-                <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest">VESTIMENTA</span>
+                <div class="flex flex-col items-center animate-bounce opacity-60">
+                    <span class="text-purple-400 text-xs">▲</span>
+                    <span class="text-[20px] font-black text-slate-500 uppercase tracking-[0.3em]">VESTIMENTA</span>
+                </div>
             </div>
+
             <div class="flex flex-col items-center gap-4">
-                <a href="{{ route('cumples.sitio') }}" class="group relative h-48 w-full max-w-[280px] md:w-64 rounded-[2rem] bg-white/40 border border-white shadow-sm overflow-hidden transform hover:scale-[1.05] transition-all">
-                    <img src="{{ asset('img/18.jpg') }}" class="w-full h-full object-cover">
+                <a href="{{ route('cumples.sitio') }}" class="group relative h-72 w-full max-w-[320px] md:w-80 rounded-[2.5rem] bg-white/40 border border-white shadow-sm overflow-hidden transform hover:scale-[1.05] transition-all duration-500">
+                    <img src="{{ asset('img/18.jpg') }}" class="w-full h-full object-cover" alt="SITIO">
+                    <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
                 </a>
-                <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest">SITIO</span>
+                <div class="flex flex-col items-center animate-bounce opacity-60">
+                    <span class="text-indigo-400 text-xs">▲</span>
+                    <span class="text-[20px] font-black text-slate-500 uppercase tracking-[0.3em]">SITIO</span>
+                </div>
             </div>
         </div>
+    </div>
+    <div class="pb-12 text-center">
+        <p class="text-[15px] font-mono text-gray-600">
+            Developed by @antoniobarbado_, @barbadodev on GitHub
+        </p>
     </div>
 </div>
 @endsection

@@ -4,28 +4,30 @@
 
 @section('content')
 <style>
-    body {
-        margin: 0;
-        background-color: #f0f4f8;
-    }
-
     @keyframes gradient {
         0% { background-position: 0% 50%; }
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
     }
-
-    .animate-gradient {
-        background: linear-gradient(-45deg, #eef2ff, #f5f3ff, #ecfdf5, #fff1f2);
-        background-size: 400% 400%;
-        animation: gradient 15s ease infinite;
+    body {
+        margin: 0;
+        background-color: #ec4899; 
         min-height: 100vh;
     }
 
+    .animate-gradient {
+        background: linear-gradient(-100deg, #f584bc, #f29fff, #f892a3);
+        background-size: 400% 400%;
+        animation: gradient 10s ease infinite;
+        min-height: 100vh; 
+        width: 100%;
+    }
+
     .glass-light {
-        background: rgba(255, 255, 255, 0.7);
+        background: rgba(255, 255, 255, 0.9);
         backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     }
 </style>
 
@@ -71,12 +73,13 @@
             </div>
 
         </div>
+<br><br>
 
-        <div class="mt-8 text-center">
-            <p class="text-[11px] font-mono text-gray-400">
-                Developed by <span class="text-indigo-400">@antoniobarbado_, @barbadodev on GitHub</span>
-            </p>
-        </div>
+        <div class="pb-12 text-center">
+        <p class="text-[15px] font-mono text-gray-600">
+            Developed by @antoniobarbado_, @barbadodev on GitHub
+        </p>
+    </div>
     </div>
 </div>
 @endsection

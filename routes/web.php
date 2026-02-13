@@ -13,7 +13,7 @@ Route::get('cumples',[CumpleController::class, 'index'])->name('cumples.index');
 Route::get('cumple/registrar',[CumpleController::class, 'create'])->name('cumples.create');
 Route::post('cumples', [CumpleController::class, 'store'])->name('cumples.store');
 
-// Rutas de información (IMPORTANTE: Antes del {cumple})
+
 Route::get('cumples/sitio', [CumpleController::class, 'sitio'])->name('cumples.sitio');
 Route::get('cumples/vestimenta', [CumpleController::class, 'vestimenta'])->name('cumples.vestimenta');
 
@@ -21,7 +21,7 @@ Route::get('cumples/{cumple}',[CumpleController::class, 'show'])->name('cumples.
 Route::get('cumples/{cumple}/edit',[CumpleController::class, 'edit'])->name('cumples.edit');
 Route::put('cumples/{cumple}',[CumpleController::class, 'update'])->name('cumples.update');
 
-// Login del admin
+
 Route::get('/admin-login', function () {
     return view('cumples.admin-login');
 })->name('cumples.admin.login');

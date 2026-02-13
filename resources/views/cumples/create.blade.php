@@ -4,30 +4,32 @@
 
 @section('content')
 <style>
-    body {
-        margin: 0;
-        background-color: #f0f4f8;
-        min-height: 100vh;
-    }
+    
 
     @keyframes gradient {
         0% { background-position: 0% 50%; }
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
     }
+    body {
+        margin: 0;
+        background-color: #ec4899; 
+        min-height: 100vh;
+    }
 
     .animate-gradient {
-        background: linear-gradient(-45deg, #eef2ff, #f5f3ff, #ecfdf5, #fff1f2);
+        background: linear-gradient(-100deg, #f584bc, #f29fff, #f892a3);
         background-size: 400% 400%;
-        animation: gradient 15s ease infinite;
+        animation: gradient 10s ease infinite;
         min-height: 100vh; 
         width: 100%;
     }
 
     .glass-light {
-        background: rgba(255, 255, 255, 0.7);
+        background: rgba(255, 255, 255, 0.9);
         backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     }
 
     .checkbox-card {
@@ -170,10 +172,9 @@
                         <h3 class="text-[10px] font-black text-[#1DB954] uppercase tracking-[0.3em]">Playlist de la Fiesta</h3>
                     </div>
                     <a href="https://open.spotify.com/playlist/7otgUClhjrJ2QGWCH8ckKy?si=372994b4b9e547ca&pt=ae463f26fee7ac2d9e07f14f48ff73b7" target="_blank" id="playlistBtn"
-                       class="inline-block px-6 py-2.5 bg-white border border-[#1DB954]/30 text-[#1DB954] text-[9px] font-black uppercase tracking-[0.2em] rounded-full hover:bg-[#1DB954] hover:text-white transition-all duration-300 shadow-sm active:scale-95">
+                        class="inline-block px-6 py-2.5 bg-white border border-[#1DB954]/30 text-[#1DB954] text-[9px] font-black uppercase tracking-[0.2em] rounded-full hover:bg-[#1DB954] hover:text-white transition-all duration-300 shadow-sm active:scale-95">
                         + AÑADIR CANCIONES A LA PLAYLIST
                     </a>
-                    <input type="hidden" name="playlist_visitada" id="playlist_input" value="">
                 </div>
 
                 <div class="pt-2">
@@ -203,7 +204,7 @@
                 </a>
                 <div class="flex flex-col items-center animate-bounce opacity-60">
                     <span class="text-purple-400 text-xs">▲</span>
-                    <span class="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em]">VESTIMENTA</span>
+                    <span class="text-[20px] font-black text-slate-500 uppercase tracking-[0.3em]">VESTIMENTA</span>
                 </div>
             </div>
 
@@ -214,15 +215,15 @@
                 </a>
                 <div class="flex flex-col items-center animate-bounce opacity-60">
                     <span class="text-indigo-400 text-xs">▲</span>
-                    <span class="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em]">SITIO</span>
+                    <span class="text-[20px] font-black text-slate-500 uppercase tracking-[0.3em]">SITIO</span>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="pb-12 text-center">
-        <p class="text-[11px] font-mono text-gray-600">
-            Developed by <span class="text-purple-400">@antoniobarbado_, @barbadodev on GitHub</span>
+        <p class="text-[15px] font-mono text-gray-600">
+            Developed by @antoniobarbado_, @barbadodev on GitHub
         </p>
     </div>
 
