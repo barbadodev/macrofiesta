@@ -7,8 +7,6 @@ use Illuminate\Support\Facades\Session;
 use App\Mail\RegistroFiestaMail;
 use Illuminate\Http\Request;
 
-Route::get('/', HomeController::class);
-
 Route::get('cumples',[CumpleController::class, 'index'])->name('cumples.index');
 Route::get('cumple/registrar',[CumpleController::class, 'create'])->name('cumples.create');
 Route::post('cumples', [CumpleController::class, 'store'])->name('cumples.store');
